@@ -1,0 +1,23 @@
+use ag
+
+db.employee.insertOne({name : "Boris", gender: "male", date: new Date :("22/09/2099"), interests: ["informatics", "robotics", "olimp"]})
+
+db.employee.insertOne({name : "Alex", gender: "male", date: new Date :("23/05/2049"), interests: ["informatics", "volleyball", "olimp"]})
+
+db.employee.insertOne({name : "Ivan", gender: "male", date: new Date :("09/10/2034"), interests: ["informatics", "volleyball", "olimp"]})
+
+db.employee.insertOne({name : "Mark", gender: "male", date: new Date :("17/12/2009"), interests: ["informatics", "math", "olimp"]})
+
+db.employee.insertOne({name : "Fedya", gender: "male", date: new Date :("28/04/2080"), interests: ["studying", "walking", "reading"]})
+
+db.employee.insertOne({name : "Vera", gender: "female", date: new Date :("02/01/1999"), interests: ["informatics", "drawing", "jogging"]})
+
+db.employee.insertOne({name : "Tanya", gender: "female", date: new Date :("14/07/2018"), interests: ["dancing", "writing", "drawing"]})
+
+db.employee.find({gender:"male"}).pretty().limit(1)
+
+db.employee.find({name: {$regex ".*a$"}}).pretty()
+
+db.employee.deleteMany({name:{$not:{$regex ".*a$"}}})
+
+db.employee.deleteMany({interests: "olimp"})
